@@ -84,19 +84,20 @@ class TwoInput extends Component {
         isEdit: false,
         editFname: '',
         editLname: '',
-    }
+        selectedIndex: '',
+    };
     changeFirstname = (event) => {
         console.log('changeFirstname');
         this.setState({
             fname: event.target.value
         })
-    }
+    };
     changeLastname = (event) => {
         console.log('changeLastname');
         this.setState({
             lname: event.target.value
         })
-    }
+    };
 
     handleSubmit = () => {
         let name = {firstName: this.state.fname, lastName: this.state.lname}//this.state.fname + " " + this.state.lname;
@@ -105,19 +106,19 @@ class TwoInput extends Component {
         this.setState({
             persons: newperson, fname: '', lname: ''
         })
-    }
+    };
     changeEditFname = (event) => {
         console.log('changeEditFname');
         this.setState({
             editFname: event.target.value
         })
-    }
+    };
     changeEditLname = (event) => {
         console.log('changeEditLname');
         this.setState({
             editLname: event.target.value
         })
-    }
+    };
     handleRemove = (i) => {
         console.log('handleRemove');
         let newname = this.state.persons.filter((item, index) => {
@@ -127,21 +128,31 @@ class TwoInput extends Component {
             persons: newname
         })
     }
-    handleEdit = (item) => {
-        // if(!this.state.isEdit){
-        //     this.setState({isEdit:true})
-        // }
-        // else{
-        //     this.setState({isEdit:false})
-        // }
-        //
+    handleEdit = (item , i) => {
         this.setState({
             isEdit: !this.state.isEdit,
             editFname: item.firstName,
-            editLname: item.lastName
-        })
+            editLname: item.lastName,
+            selectedIndex: i
+        });
         console.log("ITEM", item);
-    }
+        console.log("Index",i);
+        console.log('handleEdit');
+
+    };
+    handleEditSubmit = () => {
+        let firstName = this.state.editFname;
+        let lastName = this.state.editLname;
+        this.setState({
+            persons:this.state.persons.map((item, index) =>
+                (index === this.state.selectedIndex  ? {...item, firstName , lastName } : item )
+            ),
+
+        });
+        console.log('handleEditSubmit');
+        console.log('handleEditSubmitFNAME',firstName);
+        console.log('handleEditSubmitLNAME',lastName);
+    };
 
     render() {
         const {classes} = this.props;
@@ -251,10 +262,9 @@ class TwoInput extends Component {
                                                         />
                                                     </FormControl>
                                                     <Fab color="primary" aria-label="Add"
-                                                         className={classes.fab}><DoneIcon/></Fab>
+                                                         className={classes.fab}><DoneIcon onClick={this.handleEditSubmit}/></Fab>
                                                 </div>
                                                 : null
-
                                             }
                                             <List component="nav">
                                                 {this.state.persons.map((item, i) => {
@@ -265,13 +275,13 @@ class TwoInput extends Component {
                                                             </ListItemText>
                                                             <div onClick={() => {
                                                                 console.log(item);
-                                                                this.handleEdit(item)
+                                                                this.handleEdit(item,i)
                                                             }}>
                                                                 <IconButton>
                                                                     <EditIcon/>
                                                                 </IconButton>
                                                             </div>
-                                                            <div onClick={() => this.handleRemove(i)}>
+                                                            <div onClick={() => this.handleRemove(i)} >
                                                                 <IconButton >
                                                                     <DeleteIcon/>
                                                                 </IconButton>

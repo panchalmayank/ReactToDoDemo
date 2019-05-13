@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe1e9901-e3ee-47c4-a602-f7f65a460dea" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/twoinputs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/twoinputs.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,13 +28,11 @@
       <file leaf-file-name="twoinputs.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/screens/twoinputs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="273" column="101" selection-start-line="273" selection-start-column="101" selection-end-line="273" selection-end-column="101" />
+            <state relative-caret-position="472">
+              <caret line="156" column="14" lean-forward="true" selection-start-line="156" selection-start-column="14" selection-end-line="156" selection-end-column="14" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#1100#2064#0" />
-                <element signature="e#2391#2510#0" />
-                <element signature="e#2778#2996#0" />
                 <element signature="e#3350#3700#0" />
                 <element signature="e#3403#3677#0" />
                 <element signature="e#4023#7293#0" />
@@ -186,15 +183,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557514911653</updated>
-      <workItem from="1557514914631" duration="53551000" />
+      <workItem from="1557514914631" duration="63897000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53551000" />
+    <option name="totallyTimeSpent" value="63897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -272,13 +270,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/twoinputs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="273" column="101" selection-start-line="273" selection-start-column="101" selection-end-line="273" selection-end-column="101" />
+        <state relative-caret-position="472">
+          <caret line="156" column="14" lean-forward="true" selection-start-line="156" selection-start-column="14" selection-end-line="156" selection-end-column="14" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#1100#2064#0" />
-            <element signature="e#2391#2510#0" />
-            <element signature="e#2778#2996#0" />
             <element signature="e#3350#3700#0" />
             <element signature="e#3403#3677#0" />
             <element signature="e#4023#7293#0" />
