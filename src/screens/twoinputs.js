@@ -20,6 +20,7 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider';
+// import Button from '@material-ui/core/Button'
 
 
 const styles = (theme) => ({
@@ -81,6 +82,8 @@ class TwoInput extends Component {
         lname: '',
         persons: [],
         isEdit: false,
+        editFname: '',
+        editLname: '',
     }
     changeFirstname = (event) => {
         console.log('changeFirstname');
@@ -94,11 +97,25 @@ class TwoInput extends Component {
             lname: event.target.value
         })
     }
+
     handleSubmit = () => {
-        let name = this.state.fname + " " + this.state.lname;
-        let newperson = this.state.persons.concat( name);
+        let name = {firstName: this.state.fname, lastName: this.state.lname}//this.state.fname + " " + this.state.lname;
+        console.log(name);
+        let newperson = this.state.persons.concat(name);
         this.setState({
             persons: newperson, fname: '', lname: ''
+        })
+    }
+    changeEditFname = (event) => {
+        console.log('changeEditFname');
+        this.setState({
+            editFname: event.target.value
+        })
+    }
+    changeEditLname = (event) => {
+        console.log('changeEditLname');
+        this.setState({
+            editLname: event.target.value
         })
     }
     handleRemove = (i) => {
@@ -110,13 +127,20 @@ class TwoInput extends Component {
             persons: newname
         })
     }
-    handleShowhide = () => {
-        if(this.state.isEdit === false){
-            this.setState({isEdit:true})
-        }
-        else{
-            this.setState({isEdit:false})
-        }
+    handleEdit = (item) => {
+        // if(!this.state.isEdit){
+        //     this.setState({isEdit:true})
+        // }
+        // else{
+        //     this.setState({isEdit:false})
+        // }
+        //
+        this.setState({
+            isEdit: !this.state.isEdit,
+            editFname: item.firstName,
+            editLname: item.lastName
+        })
+        console.log("ITEM", item);
     }
 
     render() {
@@ -140,7 +164,6 @@ class TwoInput extends Component {
                           justify="space-around" className={classes.grid}
                         // className={classes.grid}
                     >
-
                         <Grid item xs={12}>
                             <Grid container
                                   direction="row"
@@ -181,13 +204,6 @@ class TwoInput extends Component {
                                         </FormControl>
                                             <Fab color="primary" aria-label="Add" className={classes.fab}
                                                  onClick={this.handleSubmit}><AddIcon/></Fab>
-                                            <div>
-                                                <div>
-
-
-                                                </div>
-
-                                            </div>
                                         </CardContent>
                                     </Card>
                                 </Grid>
@@ -203,8 +219,7 @@ class TwoInput extends Component {
                                 <Grid item xs={12}>
                                     <Card>
                                         <CardContent>
-                                            {this.state.isEdit ?
-                                                <div>
+                                            {this.state.isEdit ? <div>
                                                     <FormControl className={classes.margin}>
                                                         <InputLabel htmlFor="custom-css-standard-input"
                                                                     classes={{
@@ -216,8 +231,8 @@ class TwoInput extends Component {
                                                                classes={{
                                                                    underline: classes.cssUnderline
                                                                }}
-                                                            // onChange={this.changeFirstname}
-                                                            // value={this.state.fname}
+                                                               onChange={this.changeEditFname}
+                                                               value={this.state.editFname}
                                                         />
                                                     </FormControl>
                                                     <FormControl className={classes.margin}>
@@ -231,28 +246,36 @@ class TwoInput extends Component {
                                                                classes={{
                                                                    underline: classes.cssUnderline
                                                                }}
-                                                            // onChange={this.changeLastname}
-                                                            // value={this.state.lname}
+                                                               onChange={this.changeEditLname}
+                                                               value={this.state.editLname}
                                                         />
                                                     </FormControl>
                                                     <Fab color="primary" aria-label="Add"
                                                          className={classes.fab}><DoneIcon/></Fab>
                                                 </div>
-                                                :null
+                                                : null
+
                                             }
                                             <List component="nav">
                                                 {this.state.persons.map((item, i) => {
-                                                    return <div>
+                                                    return <div key={i}>
                                                         <ListItem>
                                                             <ListItemText>
-                                                                {item}
+                                                                {item.firstName} {item.lastName}
                                                             </ListItemText>
-                                                            <IconButton >
-                                                                <EditIcon onClick={this.handleShowhide}/>
-                                                            </IconButton>
-                                                            <IconButton onClick={() => this.handleRemove(i)}>
-                                                                <DeleteIcon/>
-                                                            </IconButton>
+                                                            <div onClick={() => {
+                                                                console.log(item);
+                                                                this.handleEdit(item)
+                                                            }}>
+                                                                <IconButton>
+                                                                    <EditIcon/>
+                                                                </IconButton>
+                                                            </div>
+                                                            <div onClick={() => this.handleRemove(i)}>
+                                                                <IconButton >
+                                                                    <DeleteIcon/>
+                                                                </IconButton>
+                                                            </div>
                                                         </ListItem>
                                                         <Divider/>
                                                     </div>

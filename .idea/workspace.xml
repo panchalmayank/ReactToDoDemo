@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe1e9901-e3ee-47c4-a602-f7f65a460dea" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/screens/add-input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/twoinputs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/twoinputs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/twoinputs.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,50 +14,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="add-input.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/add-input.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="twoinputs.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/screens/twoinputs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="97" column="61" selection-start-line="97" selection-start-column="61" selection-end-line="97" selection-end-column="61" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#1006#2043#0" />
-                <element signature="e#1461#1539#0" />
-                <element signature="e#1588#1667#0" />
-                <element signature="e#1705#1890#0" />
-                <element signature="e#2227#2502#0" />
-                <element signature="e#3666#6866#0" />
-                <element signature="e#7813#8919#0" />
-                <element signature="e#9224#10378#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="264">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="twoinputs.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/screens/twoinputs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="273" column="101" selection-start-line="273" selection-start-column="101" selection-end-line="273" selection-end-column="101" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#1100#2064#0" />
+                <element signature="e#2391#2510#0" />
+                <element signature="e#2778#2996#0" />
+                <element signature="e#3350#3700#0" />
+                <element signature="e#3403#3677#0" />
+                <element signature="e#4023#7293#0" />
+                <element signature="e#4345#7225#0" />
+                <element signature="e#8366#9578#0" />
+                <element signature="e#9631#10842#0" />
+                <element signature="e#10895#11031#0" />
               </folding>
             </state>
           </provider>
@@ -74,6 +56,11 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Lis</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -199,12 +186,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1557514911653</updated>
-      <workItem from="1557514914631" duration="34885000" />
+      <workItem from="1557514914631" duration="53551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34885000" />
+    <option name="totallyTimeSpent" value="53551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -219,7 +206,7 @@
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" weight="0.32995495" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.5698198" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.29166666" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.150913" />
@@ -246,28 +233,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/screens/twoinputs.js</url>
-          <line>103</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/screens/add-input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -278,10 +247,23 @@
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/screens/add-input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="65" column="27" lean-forward="true" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -290,24 +272,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/screens/twoinputs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="97" column="61" selection-start-line="97" selection-start-column="61" selection-end-line="97" selection-end-column="61" />
+        <state relative-caret-position="370">
+          <caret line="273" column="101" selection-start-line="273" selection-start-column="101" selection-end-line="273" selection-end-column="101" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#1006#2043#0" />
-            <element signature="e#1461#1539#0" />
-            <element signature="e#1588#1667#0" />
-            <element signature="e#1705#1890#0" />
-            <element signature="e#2227#2502#0" />
-            <element signature="e#3666#6866#0" />
-            <element signature="e#7813#8919#0" />
-            <element signature="e#9224#10378#0" />
+            <element signature="e#1100#2064#0" />
+            <element signature="e#2391#2510#0" />
+            <element signature="e#2778#2996#0" />
+            <element signature="e#3350#3700#0" />
+            <element signature="e#3403#3677#0" />
+            <element signature="e#4023#7293#0" />
+            <element signature="e#4345#7225#0" />
+            <element signature="e#8366#9578#0" />
+            <element signature="e#9631#10842#0" />
+            <element signature="e#10895#11031#0" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
