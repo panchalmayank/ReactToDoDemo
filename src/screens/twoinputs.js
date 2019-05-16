@@ -23,6 +23,8 @@ import Divider from '@material-ui/core/Divider';
 // import Button from '@material-ui/core/Button'
 
 
+
+
 const styles = (theme) => ({
     textField: {
         marginLeft: theme.spacing.unit,
@@ -84,8 +86,67 @@ class TwoInput extends Component {
         isEdit: false,
         editFname: '',
         editLname: '',
-        selectedIndex: '',
+        selectedIndex: null,
     };
+
+    componentDidMount() {
+        this.getUsers();
+        this.getSingleUsers();
+        this.getUserList();
+        this.CreateUser();
+    }
+
+
+    getUsers = () => {
+        fetch('https://reqres.in/api/users?page=2')
+            .then(response => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Response USER DATA ", data.data);
+               data.data.map((item) => {
+                   let name = {firstName:item.first_name, lastName:item.last_name};
+                   console.log("NEW NAME",name);
+                   let newname = this.state.persons.concat(name);
+                   this.setState({
+                       persons:newname
+                   })
+               })
+            })
+            // .catch(error => console.log("Error ", error));
+    };
+    getSingleUsers = () => {
+
+        fetch('https://reqres.in/api/unknown/2')
+            .then(responseUser => {
+                return responseUser.json();
+            })
+            .then(userData => {
+                console.log("UserData",userData);
+            })
+    };
+    getUserList = () => {
+        fetch('https://reqres.in/api/unknown')
+            .then(responseUserList => {
+                return responseUserList.json();
+            })
+            .then(userList => {
+                console.log("UserList",userList);
+            })
+    };
+    CreateUser = (opts) => {
+        fetch('https://reqres.in/api/users', {
+            method: 'post',
+            body: JSON.stringify(opts ,{"name": "morpheus",
+                                        "job": "leader"})})
+            .then(responseUserCreate => {
+                return responseUserCreate.json()
+            })
+            .then(CreateUser => console.log("CreateUser",CreateUser))
+            .catch(error => console.log("CreateError",error));
+    };
+
+
     changeFirstname = (event) => {
         console.log('changeFirstname');
         this.setState({
@@ -98,7 +159,6 @@ class TwoInput extends Component {
             lname: event.target.value
         })
     };
-
     handleSubmit = () => {
         let name = {firstName: this.state.fname, lastName: this.state.lname}//this.state.fname + " " + this.state.lname;
         console.log(name);
@@ -128,30 +188,38 @@ class TwoInput extends Component {
             persons: newname
         })
     }
-    handleEdit = (item , i) => {
+    handleEdit = (item,i) => {
+        console.log("ITEM", item);
+        console.log("Index", i);
+        console.log("selected index ", this.state.selectedIndex);
+        console.log('handleEdit');
+        let isEdit = this.state.selectedIndex !== i;
         this.setState({
-            isEdit: !this.state.isEdit,
             editFname: item.firstName,
             editLname: item.lastName,
-            selectedIndex: i
+            isEdit,
+            selectedIndex: isEdit ? i : null
         });
-        console.log("ITEM", item);
-        console.log("Index",i);
-        console.log('handleEdit');
-
     };
     handleEditSubmit = () => {
         let firstName = this.state.editFname;
         let lastName = this.state.editLname;
+        let oldPersonList = this.state.persons;
+        oldPersonList[this.state.selectedIndex] = {
+            firstName, lastName
+        };
         this.setState({
-            persons:this.state.persons.map((item, index) =>
-                (index === this.state.selectedIndex  ? {...item, firstName , lastName } : item )
-            ),
-
+            persons: oldPersonList
         });
         console.log('handleEditSubmit');
-        console.log('handleEditSubmitFNAME',firstName);
-        console.log('handleEditSubmitLNAME',lastName);
+        console.log('handleEditSubmitFNAME', firstName);
+        console.log('handleEditSubmitLNAME', lastName);
+        /* this.setState({
+             persons: this.state.persons.map((item, index) =>
+                 (index === this.state.selectedIndex ? {...item, firstName, lastName} : item)
+             ),
+
+         });*/
     };
 
     render() {
@@ -173,7 +241,7 @@ class TwoInput extends Component {
                           direction="column"
                         //alignItems="center"
                           justify="space-around" className={classes.grid}
-                        // className={classes.grid}
+
                     >
                         <Grid item xs={12}>
                             <Grid container
@@ -198,7 +266,8 @@ class TwoInput extends Component {
                                                        onChange={this.changeFirstname}
                                                        value={this.state.fname}
                                                 />
-                                            </FormControl><FormControl className={classes.margin}>
+                                            </FormControl>
+                                            <FormControl className={classes.margin}>
                                             <InputLabel htmlFor="custom-css-standard-input"
                                                         classes={{
                                                             root: classes.cssLabel,
@@ -275,14 +344,13 @@ class TwoInput extends Component {
                                                             </ListItemText>
                                                             <div onClick={() => {
                                                                 console.log(item);
-                                                                this.handleEdit(item,i)
-                                                            }}>
+                                                                this.handleEdit(item, i)}}>
                                                                 <IconButton>
                                                                     <EditIcon/>
                                                                 </IconButton>
                                                             </div>
-                                                            <div onClick={() => this.handleRemove(i)} >
-                                                                <IconButton >
+                                                            <div onClick={() => this.handleRemove(i)}>
+                                                                <IconButton>
                                                                     <DeleteIcon/>
                                                                 </IconButton>
                                                             </div>
